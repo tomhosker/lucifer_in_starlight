@@ -1,8 +1,7 @@
 \documentclass{amsbook}
 
-\usepackage[a5paper,margin=1.1in]{geometry}
-\usepackage{verse,microtype,mathtools,xfrac,gensymb,marginnote,graphicx,ragged2e,xstring,calc,afterpage,pifont}
-\usepackage{marvosym}
+\usepackage[a5paper,margin=28mm,marginparwidth=20mm,marginparsep=3mm]{geometry}
+\usepackage{verse,microtype,mathtools,xfrac,marginnote,graphicx,ragged2e,xstring,afterpage,pifont}
 
 \usepackage{fontspec}
 \usepackage[T1]{fontenc}
@@ -16,6 +15,7 @@
 \usepackage[hidelinks]{hyperref}
 
 \newcommand{\addpoemtolist}[1]{}
+\newcommand{\poeticmarginnote}[1]{\marginnote{\footnotesize #1}}
 
 \newcounter{pageoffset}
 \newcounter{pagedifference}

@@ -1,11 +1,12 @@
 ### This code defines a class, which in turn builds and compiles LaTeX code
-### for Book I of this project.
+### for Book 1 of this project.
 
 # Imports.
 import os
 
 # Local imports.
 import which_poems
+from utilities import compile_tex_from_string
 
 # Local constants.
 autumnal_image_ext = "png"
@@ -67,11 +68,8 @@ class Book1:
 
   # Build the PDF using XeLaTeX.
   def build_pdf(self):
-    f = open("main.tex", "w")
-    f.write(self.tex)
-    f.close()
-    os.system("xelatex main.tex")
-    os.system("xelatex main.tex")
+    compile_tex_from_string(self.tex)
+    os.system("mv main.pdf book1.pdf")
 
 # A helper function.
 def get_contents(filename):
