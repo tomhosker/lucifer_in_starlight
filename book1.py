@@ -6,7 +6,7 @@ import os
 
 # Local imports.
 import which_poems
-from utilities import compile_tex_from_string
+from utilities import compile_tex_from_string, get_contents
 
 # Local constants.
 autumnal_image_ext = "png"
@@ -71,19 +71,12 @@ class Book1:
     compile_tex_from_string(self.tex)
     os.system("mv main.pdf book1.pdf")
 
-# A helper function.
-def get_contents(filename):
-  f = open(filename, "r")
-  result = f.read()
-  f.close()
-  return result
-
-# Another helper function.
+# Return the contents of a file, or return a placeholder if necessary.
 def get_poem(filename):
   if filename == None:
     return get_contents("poems/placeholder_poem.tex")
   else:
-    return get_contents("poems/"+filename)
+    return get_contents("poems/book1/"+filename)
 
 # Another helper function.
 def get_prose(filename):

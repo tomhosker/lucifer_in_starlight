@@ -11,3 +11,10 @@ def compile_tex_from_string(tex_string):
   os.system("xelatex main.tex")
   os.system("xelatex main.tex")
   os.system("rm -f main.tex main.aux main.log main.out main.toc")
+
+# Return the contents of a file.
+def get_contents(filename):
+  f = open(filename, "r")
+  result = f.read()
+  f.close()
+  return result

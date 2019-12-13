@@ -1,3 +1,5 @@
+### This code defines which poems appear where in this project.
+
 autumnal1 = "afterwards_we.tex"
 autumnal2 = "a_cup.tex"
 autumnal3 = "i_woke.tex"
@@ -13,3 +15,5 @@ vernal3 = "i_got.tex"
 aestival1 = "bridgetown_a.tex"
 aestival2 = "i_remember.tex"
 aestival3 = "a_ghost.tex"
+
+book2 = ["Lucifer_in_Starlight.tex"]

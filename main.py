@@ -27,5 +27,5 @@ def make_book2():
 
 def run():
   make_book1()
-  #make_book2()
+  make_book2()
 run()
