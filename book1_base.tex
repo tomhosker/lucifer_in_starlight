@@ -2,34 +2,6 @@
 
 #PACKAGE_CODE
 
-\newcounter{pageoffset}
-\newcounter{pagedifference}
-
-\newcommand{\poemone}{}
-\newcommand{\poemtwo}{}
-\newcommand{\poemthree}{}
-\newcommand{\printpoems}{%
-  \setcounter{pagedifference}{\value{page}-\value{pageoffset}}
-  \IfEq{\thepagedifference}{2}
-  { \poemone \clearpage}{}
-  \IfEq{\thepagedifference}{5}
-  {\poemtwo \clearpage
-   \poemthree \clearpage}{}
-  \afterpage{\printpoems}%
-}
-\newcommand{\initprintpoems}{
-  \setcounter{pageoffset}{\thepage-1}
-  \afterpage{
-  \printpoems
-  }
-}
-\newcommand\blfootnote[1]{%
-  \begingroup
-  \renewcommand\thefootnote{}\footnote{#1}%
-  \addtocounter{footnote}{-1}%
-  \endgroup
-}
-
 \title{The First Book. Lucifer in Starlight}
 
 \begin{document}

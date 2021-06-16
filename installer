@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Run me with `sh installer`.
+
+# I'm going to assume that you've already installed LaTeX.
+
+cp fonts/*.ttf $HOME/.fonts/

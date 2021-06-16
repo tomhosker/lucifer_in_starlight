@@ -17,8 +17,8 @@ HIBERNAL_IMAGE_EXT = "png"
 VERNAL_IMAGE_EXT = "png"
 AESTIVAL_IMAGE_EXT = "png"
 
-# The class in question.
 class Book1:
+    """ The class in question. """
     def __init__(self):
         self.tex = None
         self.base = get_contents(PATH_TO_BASE)
@@ -44,11 +44,11 @@ class Book1:
         self.vernal_image = get_image("vernal."+VERNAL_IMAGE_EXT)
         self.aestival_image = get_image("aestival."+AESTIVAL_IMAGE_EXT)
 
-    def make_replacements(self):
+    def build_tex(self):
         """ Replace the tags in the .tex document with the fields created in
         this class's constructor. """
         result = self.base
-        result = result.replace("#PACKAGE_CODE", package_code)
+        result = result.replace("#PACKAGE_CODE", self.package_code)
         result = result.replace("#AUTUMNAL_POEM_1", self.autumnal1)
         result = result.replace("#AUTUMNAL_POEM_2", self.autumnal2)
         result = result.replace("#AUTUMNAL_POEM_3", self.autumnal3)

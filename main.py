@@ -14,13 +14,13 @@ from book2 import Book2
 def make_book1():
     """ Ronseal. """
     bk1 = Book1()
-    bk1.make_replacements()
+    bk1.build_tex()
     bk1.build_pdf()
 
 def make_book2():
     """ Ronseal. """
     bk2 = Book2()
-    bk2.add_poems()
+    bk2.build_tex()
     bk2.build_pdf()
 
 ##############
