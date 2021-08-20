@@ -11,17 +11,31 @@ import which_poems
 from utilities import compile_tex_from_string, get_contents
 
 # Local constants.
-PATH_TO_BASE = "book1_base.tex"
-AUTUMNAL_IMAGE_EXT = "png"
-HIBERNAL_IMAGE_EXT = "png"
-VERNAL_IMAGE_EXT = "png"
-AESTIVAL_IMAGE_EXT = "png"
+DEFAULT_PATH_TO_BASE = "book1_base.tex"
+DEFAULT_IMAGE_EXTENSIONS = {
+    "autumnal": "jpg", "hibernal": "jpg", "vernal": "jpg",
+    "aestival": "jpg" }
+DEFAULT_PATH_TO_POEM_DIR = "poems/"
+DEFAULT_PATH_TO_PLACEHOLDER_POEM = os.path.join(
+    DEFAULT_PATH_TO_POEM_DIR, "placeholder_poem.tex")
+DEFAULT_PATH_TO_PROSE_DIR = "prose/"
+DEFAULT_PATH_TO_PLACEHOLDER_PROSE = os.path.join(
+    DEFAULT_PATH_TO_PROSE_DIR, "placeholder_prose.tex")
+DEFAULT_PATH_TO_IMAGE_DIR = "images/"
+DEFAULT_PATH_TO_PLACEHOLDER_IMAGE = os.path.join(
+    DEFAULT_PATH_TO_IMAGE_DIR, "placeholder_image.jpg")
+
+##############
+# MAIN CLASS #
+##############
 
 class Book1:
     """ The class in question. """
-    def __init__(self):
+    def __init__(self, path_to_base=DEFAULT_PATH_TO_BASE,
+                 image_extensions=DEFAULT_IMAGE_EXTENSIONS):
+        self.image_extensions = image_extensions
         self.tex = None
-        self.base = get_contents(PATH_TO_BASE)
+        self.base = get_contents(path_to_base)
         self.package_code = get_contents("package_code.tex")
         self.autumnal1 = get_poem(which_poems.autumnal1)
         self.autumnal2 = get_poem(which_poems.autumnal2)
@@ -39,10 +53,14 @@ class Book1:
         self.hibernal_prose = get_prose("hibernal.tex")
         self.vernal_prose = get_prose("vernal.tex")
         self.aestival_prose = get_prose("aestival.tex")
-        self.autumnal_image = get_image("autumnal."+AUTUMNAL_IMAGE_EXT)
-        self.hibernal_image = get_image("hibernal."+HIBERNAL_IMAGE_EXT)
-        self.vernal_image = get_image("vernal."+VERNAL_IMAGE_EXT)
-        self.aestival_image = get_image("aestival."+AESTIVAL_IMAGE_EXT)
+        self.autumnal_image = get_image(
+                                  "autumnal."+image_extensions["autumnal"])
+        self.hibernal_image = get_image(
+                                  "hibernal."+image_extensions["hibernal"])
+        self.vernal_image = get_image(
+                                "vernal."+image_extensions["vernal"])
+        self.aestival_image = get_image(
+                                  "aestival."+image_extensions["aestival"])
 
     def build_tex(self):
         """ Replace the tags in the .tex document with the fields created in
@@ -76,24 +94,36 @@ class Book1:
         compile_tex_from_string(self.tex)
         os.system("mv main.pdf book1.pdf")
 
-def get_poem(filename):
+####################
+# HELPER FUNCTIONS #
+####################
+
+def get_poem(filename, path_to_dir=DEFAULT_PATH_TO_POEM_DIR,
+             path_to_placeholder=DEFAULT_PATH_TO_PLACEHOLDER_POEM):
     """ Return the contents of a file, or return a placeholder if
     necessary. """
-    if filename == None:
-        return get_contents("poems/placeholder_poem.tex")
+    if not filename:
+        return get_contents(path_to_placeholder)
+    path_to = os.path.join(path_to_dir, filename)
+    if os.path.exists(path_to):
+        result = get_contents(path_to)
     else:
-        return get_contents("poems/book1/"+filename)
+        return get_contents(path_to_placeholder)
+    return result
 
-def get_prose(filename):
-    """ Another helper function. """
-    if os.path.exists("prose/"+filename):
-        return get_contents("prose/"+filename)
-    else:
-        return get_contents("prose/placeholder_prose.tex")
+def get_prose(filename, path_to_dir=DEFAULT_PATH_TO_PROSE_DIR,
+              path_to_placeholder=DEFAULT_PATH_TO_PLACEHOLDER_PROSE):
+    """ Return the contents of a file, or return a placeholder if
+    necessary. """
+    return get_poem(filename, path_to_dir=path_to_dir,
+                    path_to_placeholder=path_to_placeholder)
 
-def get_image(filename):
-    """ Another helper function. """
-    if os.path.exists("images/"+filename):
-        return filename
+def get_image(filename, path_to_image_dir=DEFAULT_PATH_TO_IMAGE_DIR,
+              path_to_placeholder=DEFAULT_PATH_TO_PLACEHOLDER_IMAGE):
+    """ Return the path to a file, or return a placeholder if
+    necessary. """
+    result = os.path.join(path_to_image_dir, filename)
+    if os.path.exists(result):
+        return result
     else:
-        return "images/placeholder_image.jpg"
+        return path_to_placeholder
