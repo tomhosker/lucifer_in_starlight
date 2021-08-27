@@ -1,43 +1,69 @@
-\usepackage[a5paper,margin=28mm,marginparwidth=20mm,marginparsep=3mm]{geometry}
-\usepackage{verse,microtype,mathtools,xfrac,marginnote,graphicx,ragged2e,xstring,afterpage,pifont}
+\usepackage[
+    a5paper,
+    margin=28mm,
+    marginparwidth=20mm,
+    marginparsep=3mm]{geometry}
+
+\usepackage{
+    verse,
+    microtype,
+    mathtools,
+    marginnote,
+    graphicx,
+    ragged2e,
+    xstring,
+    afterpage,
+    pifont}
 
 \usepackage{fontspec}
-\usepackage[T1]{fontenc}
 \newfontfamily\hoskeroe{English Towne}
-\newfontfamily\greekish{CMU Serif}
 \newfontfamily\arabicish{KacstQurn}
 \newfontfamily\frakturish{Fette UNZ Fraktur}
-\setmainfont[Numbers=OldStyle]{CMU Serif}
+\setmainfont[
+    ItalicFont=cmunti.otf,
+    BoldFont=cmunbx.otf,
+    BoldItalicFont=cmunbi.otf,
+    Numbers=OldStyle]{cmunrm.otf}
+
+\usepackage{xfrac}
+\DeclareInstance{xfrac}{cmunrm.otf(0)}{text}{
+    slash-symbol-font = ptm,
+    scale-factor=0.8,
+    numerator-top-sep = 0pt,
+    denominator-bot-sep = 0pt,
+    slash-right-kern=-.25em,
+    slash-left-kern=-.3em}
 
 \usepackage[hidelinks]{hyperref}
 
 \newcommand{\addpoemtolist}[1]{}
 \newcommand{\poeticmarginnote}[1]{\marginnote{\footnotesize #1}}
+\newcommand{\poeticfrac}[2]{\sfrac{$#1$}{$#2$}}
 
 \newcounter{pageoffset}
 \newcounter{pagedifference}
 \newcommand\blfootnote[1]{%
-  \begingroup
-  \renewcommand\thefootnote{}\footnote{#1}%
-  \addtocounter{footnote}{-1}%
-  \endgroup
+    \begingroup
+    \renewcommand\thefootnote{}\footnote{#1}%
+    \addtocounter{footnote}{-1}%
+    \endgroup
 }
 
 \newcommand{\poemone}{}
 \newcommand{\poemtwo}{}
 \newcommand{\poemthree}{}
 \newcommand{\printpoems}{%
-  \setcounter{pagedifference}{\value{page}-\value{pageoffset}}
-  \IfEq{\thepagedifference}{2}
-  { \poemone \clearpage}{}
-  \IfEq{\thepagedifference}{5}
-  {\poemtwo \clearpage
-   \poemthree \clearpage}{}
-  \afterpage{\printpoems}%
+    \setcounter{pagedifference}{\value{page}-\value{pageoffset}}
+    \IfEq{\thepagedifference}{2}
+    { \poemone \clearpage}{}
+    \IfEq{\thepagedifference}{5}
+    {\poemtwo \clearpage
+    \poemthree \clearpage}{}
+    \afterpage{\printpoems}%
 }
 \newcommand{\initprintpoems}{
-  \setcounter{pageoffset}{\thepage-1}
-  \afterpage{
-  \printpoems
-  }
+    \setcounter{pageoffset}{\thepage-1}
+    \afterpage{
+        \printpoems
+    }
 }

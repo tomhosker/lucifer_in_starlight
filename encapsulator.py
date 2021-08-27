@@ -10,14 +10,15 @@ import sys
 from utilities import compile_tex_from_string, get_contents
 
 # Local constants.
-ENCAPSULATOR_BASE = ("\\documentclass{amsart}\n\n"+
-                     "#PACKAGE_CODE\n\n"+
-                     "\\title{#TITLE}\n\n"+
-                     "\\begin{document}\n\n"+
-                     "\\maketitle\n\n"+
-                     "\\thispagestyle{empty}\n\n"+
-                     "#CONTENT\n\n"+
-                     "\\end{document}")
+ENCAPSULATOR_BASE = (
+    "\\documentclass{amsart}\n\n"+
+    "#PACKAGE_CODE\n\n"+
+    "\\title{#TITLE}\n\n"+
+    "\\begin{document}\n\n"+
+    "\\maketitle\n\n"+
+    "\\thispagestyle{empty}\n\n"+
+    "#CONTENT\n\n"+
+    "\\end{document}")
 
 ##############
 # MAIN CLASS #
@@ -60,7 +61,7 @@ def demo():
 ###################
 
 def run():
-    path_to = "poems/book1/i_m_not.tex"
+    path_to = "poems/book1/afterwards_we.tex"
     encapsulator = Encapsulator(path_to)
     encapsulator.make_replacements()
     encapsulator.build_pdf()
