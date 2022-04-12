@@ -16,11 +16,12 @@ aestival2 = "i_remember.tex"
 aestival3 = "a_ghost.tex"
 
 book2 = [
-    "An_Amatory_Epistle.tex",
-    "Another_Amatory_Epistle.tex",
+    "A_Love-Letter.tex",
+    "Another_Letter.tex",
     "Cocaine_Blues.tex",
     "Epithalamium.tex",
     "An_Encomium.tex",
     "Vlissingen.tex",
     "An_Elegy_for_J_R_H_Stoke.tex",
-    "Lucifer_in_Starlight.tex"]
+    "Lucifer_in_Starlight.tex"
+]

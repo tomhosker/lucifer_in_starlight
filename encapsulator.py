@@ -4,7 +4,6 @@ This code defines a class which produces a PDF for a given poem.
 
 # Standard imports.
 import os
-import sys
 
 # Local imports.
 from utilities import compile_tex_from_string, get_contents
@@ -18,7 +17,13 @@ ENCAPSULATOR_BASE = (
     "\\maketitle\n\n"+
     "\\thispagestyle{empty}\n\n"+
     "#CONTENT\n\n"+
-    "\\end{document}")
+    "\\end{document}"
+)
+DEFAULT_TITLE = "\ding{72}"
+
+# Configs.
+PATH_TO = "poems/book2/A_Love-Letter.tex"
+TITLE = "A Love-Letter"
 
 ##############
 # MAIN CLASS #
@@ -26,7 +31,7 @@ ENCAPSULATOR_BASE = (
 
 class Encapsulator:
     """ The class in question. """
-    def __init__(self, path_to, title="\ding{72}"):
+    def __init__(self, path_to, title=DEFAULT_TITLE):
         self.path_to = path_to
         self.title = title
         self.tex = None
@@ -44,7 +49,7 @@ class Encapsulator:
     def build_pdf(self):
         """ Ronseal. """
         compile_tex_from_string(self.tex)
-        os.system("mv main.pdf poem.pdf")
+        os.rename("main.pdf", "poem.pdf")
 
 ###########
 # TESTING #
@@ -61,8 +66,7 @@ def demo():
 ###################
 
 def run():
-    path_to = "poems/book1/afterwards_we.tex"
-    encapsulator = Encapsulator(path_to)
+    encapsulator = Encapsulator(PATH_TO, title=TITLE)
     encapsulator.make_replacements()
     encapsulator.build_pdf()
 
