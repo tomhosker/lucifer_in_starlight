@@ -35,7 +35,7 @@ class Book2:
     def build_pdf(self):
         """ Build the PDF using XeLaTeX. """
         compile_tex_from_string(self.tex)
-        os.system("mv main.pdf book2.pdf")
+        os.rename("main.pdf", "book2.pdf")
 
 class Poem:
     """ A helper class, this handles the properties of a poem. """
