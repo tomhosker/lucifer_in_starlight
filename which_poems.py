@@ -18,7 +18,7 @@ aestival3 = "a_ghost.tex"
 book2 = [
     "A_Love-Letter.tex",
     "Another_Letter.tex",
-    "Cocaine_Blues.tex",
+    "The_Orgy_at_Earls_Crescent.tex",
     "Epithalamium.tex",
     "An_Encomium.tex",
     "Vlissingen.tex",

@@ -1,6 +1,18 @@
 \documentclass[openany]{amsbook}
 
+\usepackage[
+    a5paper,
+    margin=28mm,
+    marginparwidth=20mm,
+    marginparsep=3mm
+]{geometry}
+
 #PACKAGE_CODE
+
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+{\centering\normalfont\Large\bfseries}{}{0pt}{}
+\titlespacing*{\chapter}{0pt}{0pt}{20pt}
 
 \title{The Second Book}
 

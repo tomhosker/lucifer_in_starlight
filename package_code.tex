@@ -24,7 +24,8 @@
     ItalicFont=cmunti.otf,
     BoldFont=cmunbx.otf,
     BoldItalicFont=cmunbi.otf,
-    Numbers=OldStyle]{cmunrm.otf}
+    Numbers=OldStyle
+]{cmunrm.otf}
 
 \usepackage{xfrac}
 \DeclareInstance{xfrac}{cmunrm.otf(0)}{text}{
@@ -67,7 +68,5 @@
 }
 \newcommand{\initprintpoems}{
     \setcounter{pageoffset}{\thepage-1}
-    \afterpage{
-        \printpoems
-    }
+    \afterpage{\printpoems}
 }
