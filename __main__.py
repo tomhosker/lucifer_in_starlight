@@ -68,9 +68,9 @@ def run():
     bk1 = Book1(force_placeholders=arguments)
     bk1.build_tex()
     bk1.build_pdf()
-    bk2 = Book2()
-    bk2.build_tex()
-    bk2.build_pdf()
+#    bk2 = Book2()
+#    bk2.build_tex()
+#    bk2.build_pdf()
 
 if __name__ == "__main__":
     run()

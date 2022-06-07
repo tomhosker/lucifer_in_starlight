@@ -18,7 +18,7 @@
 
 \usepackage{fontspec}
 \newfontfamily\hoskeroe{English Towne}
-\newfontfamily\arabicish{KacstQurn}
+\newfontfamily\arabicish[Scale=1.2, Script=Arabic]{KacstQurn}
 \newfontfamily\frakturish{Fette UNZ Fraktur}
 \setmainfont[
     ItalicFont=cmunti.otf,
@@ -39,7 +39,10 @@
 
 \usepackage[hidelinks]{hyperref}
 
-\hyphenpenalty=10000
+\hyphenpenalty=1000
+
+% For Arabic text inside left-to-right text.
+\newcommand{\textarabic}[1]{\bgroup\textdir TRT\arabicish #1\egroup}
 
 \newcommand{\addpoemtolist}[1]{}
 \newcommand{\poeticmarginnote}[1]{\marginnote{\footnotesize #1}}
