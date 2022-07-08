@@ -11,7 +11,8 @@
     a5paper,
     margin=28mm,
     marginparwidth=20mm,
-    marginparsep=3mm]{geometry}
+    marginparsep=3mm
+]{geometry}
 
 \usepackage{
     verse,
@@ -22,7 +23,9 @@
     ragged2e,
     xstring,
     afterpage,
-    pifont
+    pifont%,
+%    ftnxtra,
+%    fnpos
 }
 
 \usepackage{fontspec}
@@ -117,7 +120,7 @@
 \thispagestyle{empty}
 \topskip0pt
 \vspace*{\fill}
-\noindent {\sc Argument:} {\itshape How the two lovers from \emph{William's Farewell}, having suffered an unrecoverable loss, wandered across the country; and of the strange things that befell them on their way.}
+\noindent \textsc{Argument:} \textit{How the two lovers from} William's Farewell\textit{, having suffered an unrecoverable loss, wandered from place to place; and of the things that befell them on their way.}
 \vspace*{\fill}
 \clearpage
 
@@ -285,7 +288,7 @@ Fringed with fur \& a hem of white satin --\\*
 Fire is not quenched by the dark, but\poeticmarginnote{Auden}\\*
 \vin Love, sometimes, is blunted by fear:\\
 You have untied the cord from your waist,\\
-\vin Unstrung your softnesses into the d\'uvet,\\
+\vin Unstrung your softnesses onto the d\'uvet,\\
 But, for all my teenage desire, I\\*
 \vin Could not make myself hard for you.\\!
 
@@ -303,7 +306,7 @@ The branches blackened \& bare in the courtyard\\*
 \centering \ding{58}
 \bigskip
 \begin{quote}
-\poeticmarginnote{\textarabic{محمد}}God, I am your possession, the son of your workman, the son of your washerwoman, and you hold my head in your hands. All your wishes for me are just, and your wishes are always carried out. I ask you, by every name with which you have named yourself, or which you have taught to any of your creatures, or which you have revealed in your book, or which you have kept within yourself in your knowledge of the unseen: make your book into the knocking of my heart and the brightness of my eyes, and a departure for my sorrow and a release from all distress. Amen.
+\poeticmarginnote{\textarabic{محمد}}God, I am your possession, the son of your workman, the son of your washerwoman, and you hold my head in your hands. All your wishes are just, and your wishes are always carried out. I ask you, by every name with which you have named yourself, or which you have taught to any of your creatures, or which you have revealed in your book, or which you have kept within yourself in your knowledge of the unseen: make your book into the knocking of my heart and the brightness of my eyes, and a departure for my sorrow and a release from all distress. Amen.
 \end{quote}
 }
 \initprintpoems
@@ -351,25 +354,25 @@ Aenean vehicula dapibus magna, quis ultrices erat ultricies vel. Vivamus fringil
 \bigskip
 \settowidth{\versewidth}{Where the sunlight catches those wine-dark stones.}
 \begin{verse}[\versewidth]
-I got this knife off an arab trader\poeticmarginnote{Kavadias \guillemotleft{Ένα Μαχαίρι}\guillemotright}\\*
-In odds \& ends in a stall in \textsc{Algiers}.\\
-I remember his hoarse voice and hollow stare,\\*
-The grime staining his lips \& fingers.\\!
+I got this knife off an arab trader\poeticmarginnote{Kavadias, \guillemotleft{Ένα Μαχαίρι}\guillemotright}\\*
+\vin In odds \& ends in a stall in \textsc{Algiers}.\\
+I remember his hoarse voice \& hollow stare,\\*
+\vin The grime staining his lips \& fingers.\\!
 
-See that mark there. That's hand-worked sheffield steel.\nobreak\\*
-Those are real rubies set into the hilt.\\
+See that mark there. That's hand-worked sheffield steel.\\*
+\vin Those are real rubies set into the hilt.\\
 But every man who ever held its weight\\*
-Ended up killing someone that he loved.\\!
+\vin Ended up killing someone that he loved.\\!
 
 A father who walked in on his young wife\\*
-With his own son gutted him in the street.\\
+\vin With his own son gutted him in the street.\\
 A greek sailor sawed through his boatswain's windpipe\\*
-Over a bad hand \& a packet of smokes.\\!
+\vin Over a bad hand \& a packet of smokes.\\!
 
 I keep this knife tucked into my work-belt,\\*
-Where the sunlight catches those wine-dark stones.\\
+\vin Where the sunlight catches those wine-dark stones.\\
 And I, that care for no one in this world,\\*
-Am terrified I'll only turn it on myself.
+\vin Am terrified I'll only turn it on myself.
 \end{verse}
 \end{figure*}
 }
@@ -467,7 +470,7 @@ Her hair is tangled \& black, like black-bryony,\\*
 Edged with red velvet is tucked between her calves.\\!
 
 And those cheeks, as tender as meltwater\\*
-\vin And as clear, that small voice purling\\
+\vin And as clear, that clear voice purling\\
 \vin \vin More rosily than mulled wine,\\*
 That six hand\poeticmarginnote{hand = 4 in} waist no soul has yet handled.\\!
 
@@ -476,11 +479,17 @@ But the light fails, lovers meet and journeys end.\marginnote{\footnotesize Shak
 \vin \vin Whose head she kisses\\*
 As if the world, and not her, had gone blind:\\!
 
-And nothing matters more than a girl,\footnotetext{The poet may have had a passage from Charles Williams's \textit{Witchcraft}, quoted by Prof Auden in \textit{The Dyer's Hand}, in the back of his mind when these lines came to him, namely: `One is aware that a phenomenon, being wholly itself, is laden with universal meaning. A hand lighting a cigarette is the explanation of everything; a foot stepping from the train is the rock of all existence... Two light dancing steps by a girl appear to be what all the Schoolmen were trying to express... but two quiet steps by an old man seem like the very speech of hell. Or the other way round.'}\\*
+And nothing matters more than a girl,\\*
 \vin Of a velvety, late august early evening,\\
 \vin \vin With her fingers\\*
 In the lapels of her lover's jacket.
 \end{verse}
+
+\vspace{0.5in}
+
+\begin{minipage}{\textwidth}
+    \blfootnote{The poet may have had a passage from Charles Williams's \textit{Witchcraft}, quoted by Prof Auden in \textit{The Dyer's Hand}, in the back of his mind when these lines came to him, namely: `One is aware that a phenomenon, being wholly itself, is laden with universal meaning. A hand lighting a cigarette is the explanation of everything; a foot stepping from the train is the rock of all existence... Two light dancing steps by a girl appear to be what all the Schoolmen were trying to express... but two quiet steps by an old man seem like the very speech of hell. Or the other way round.'}
+\end{minipage}
 \end{figure*}
 }
 \renewcommand{\poemtwo}{
@@ -491,7 +500,7 @@ In the lapels of her lover's jacket.
 \settowidth{\versewidth}{I remember smoking hash by the railtracks}
 \begin{verse}[\versewidth]
 I remember smoking hash by the railtracks\\*
-\vin Dribbling down from \textsc{Ponte Casalino}\\
+\vin Dribbling down from \textsc{Ponte Casilino}\\
 With that giggly albino of a dutch girl\\*
 \vin Who never could stay pregnant.
 \end{verse}
@@ -504,7 +513,7 @@ With that giggly albino of a dutch girl\\*
 \bigskip
 \begin{verse}[0.95\textwidth]
 A ghost is something -- death does not close all --\poeticmarginnote{Propertius IV.7}\\*
-\vin And a spirit seeps out, untied from its body --\\
+\vin And a soul seeps out, untied from its body --\\
 For I have seen \textit{Silvia} peering over my bedhead\poeticmarginnote{Prof Lee}\\
 \vin Though we'd buried her ashes by the side of the road\\
 Only that day -- as if she'd been fished out of the fire\poeticmarginnote{Leopardi}\\*
@@ -523,7 +532,7 @@ Alas for all those pleasures of sweet life\\*
 \vin You paid me your respects in what you wr\'ote.\\
 If you still want to make amends: bury your notebooks next to my grave,\\
 \vin Plant myrtle over us both, and carve this in stone\\
-(Where \textsc{Anio}'s purling fattens thirsty orchards\\
+(Where \textsc{Anio}'s purling fattens thirsty plum groves,\\
 \vin And ivory, thanks to \textit{Hercules}, never yellows):\\
 \textit{Here lies gold and }Silvia\textit{, bringing}\\*
 \vin \textit{Glory, Father \textsc{Anio}, to your banks.}\\!
@@ -534,7 +543,7 @@ Daylight keeps us in chains; night sets us free,\\
 \vin And \textit{Cerberus} only watches the backs of his six eyelids.\nobreak\\
 Others may hold you for now;\\
 \vin You'll be ashes yourself soon enough.\\
-You'll be with me, and the good earth\\*
+You'll be with me,\poeticmarginnote{I Sam 28.19} and the good earth\\*
 \vin Will mill each of our bones into the other's.'\\!
 
 Thus she spoke, and laid herself beside me,\\*
@@ -552,7 +561,7 @@ Juan was good with women, but you have probably already guessed that he stirred 
 
 \prosesep
 
-One evening -- I remember it was a Friday -- we went for a night out in Ostia, and it happened like this. There's a train line from Basilica San Paolo to the centre of Ostia, and we bought two litres of vodka and a large carton of orange juice from a shop near the station. We took the last train out; I think in those days it left around eleven. The journey takes half an hour, and, because we had no third vessel in which to mix the juice and the alcohol, I would take a swig from the carton and Juan from the bottle, after which he would decant a glug or so from his vessel into mine. And I was astonished by the nonchalance with which he drank, as if he was imbibing nothing more caustic than lukewarm camomile tea.
+One evening -- I remember it was a Friday -- we went for a night out in Ostia, and it happened like this.\poeticmarginnote{Jn 21.1} There's a train line from Basilica San Paolo to the centre of Ostia, and we bought two litres of vodka and a large carton of orange juice from a shop near the station. We took the last train out; I think in those days it left around eleven. The journey takes half an hour, and, because we had no third vessel in which to mix the juice and the alcohol, I would take a swig from the carton and Juan from the bottle, after which he would decant a glug or so from his vessel into mine. And I was astonished by the nonchalance with which he drank, as if he was imbibing nothing more caustic than lukewarm camomile tea.
 
 In Ostia, there was a nightclub on the beach, but we rejoined Juan's friends about a hundred yards further down the shoreline, where they had built a small fire. There was a short, muscular Brazilian man, who wanted to be a boxer. There was a young Mexican, whose father had recently bought him a tiny bar in Rome proper (called La Radio) and his Italian girlfriend, who, over the course of the evening, made a number of rather funny comparisons between her boyfriend and Speedy Gonzales, which he took with very good grace. And there were also three or four young Italian men, whose names and faces I have forgotten.
 
@@ -594,13 +603,13 @@ The bus was practically empty, so we took the back row. We propped Heidi against
 
 `That's not even the best part.' He smiled to himself. `I think she was a virgin. She was nervous and --' he pulled down his jeans to show me his underwear; on the grey cotton, there was a trail of black splodges near the crotch -- `she bled on me a bit. Anyway, she won't forget me.'
 
-Just as he finished speaking, the bus turned and passed under the Porta Onoriana, a trio of rose-gold coloured arches, a stone's throw from the main part of the Porta Maggiore, put up in the dying years of the Western Roman Empire. It was a cloudless day, and, because it was so early, the sun was still low enough to shine directly through the archways, pouring its marvellous burgundy light down the whole length of the Via Casilina.\poeticmarginnote{I Pet 2.9} Juan and I and glanced at each other. Perhaps there was even a chuckle or a sharp intake of breath. But no words were necessary to acknowledge the moment. We passed the rest of the journey in a comfortable silence.
+Just as he finished speaking, the bus turned and passed under the Porta Onoriana, a trio of rose-gold coloured arches, a stone's throw from the main part of the Porta Maggiore, the remains of a fortification put up in the last years of the Western Roman Empire. It was a cloudless day, and, because it was so early, the sun was still low enough to shine directly through the archways, pouring its marvellous burgundy light down the whole length of the Via Casilina.\poeticmarginnote{I Pet 2.9} Juan and I and glanced at each other. Perhaps there was even a chuckle or a sharp intake of breath. But no words were necessary to acknowledge the moment. We passed the rest of the journey in a comfortable silence.
 
 Heidi perked up once we were home. Juan made cheese and prosciutto omelettes for the three of us. He was, of course, an excellent cook. Then I went to my room and slept until well into the afternoon.
 
 \prosesep
 
-Years later, my beloved, in my parents' house in South Yorkshire, a few minutes after I had relieved you of your own virginity, I asked you if I could get you anything, and you asked for hot chocolate. I went down to the kitchen, put the kettle on, and looked through the window at the night's sky. It was about three o'clock on Christmas Day morning. For all the distance in time, climate and latitude, I could not help but think back to that morning on the Via Casilina.
+Years later, my beloved, in my parents' house in England, a few minutes after I had relieved you of your own virginity, I asked you if I could get you anything, and you asked for hot chocolate. I went down to the kitchen, put the kettle on, and looked through the window at the night's sky. It was just after three o'clock in the morning of the twenty-fifth of December; but, for all the distance in time, climate and latitude, I could not help but think back to that morning on the Via Casilina.
 
 
 \bigskip
