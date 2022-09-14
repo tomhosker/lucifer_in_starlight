@@ -22,7 +22,10 @@ book2 = [
     "Epithalamium.tex",
     "An_Encomium.tex",
     "Vlissingen.tex",
+    "CGRM.tex",
     "Operation_TELIC.tex",
+    "Colin_Eastman.tex",
+    "An_Elegy_for_Kirstie_Foster.tex",
     "An_Elegy_for_J_R_H_Stoke.tex",
     "Lucifer_in_Starlight.tex"
 ]
