@@ -31,7 +31,7 @@ DEFAULT_PATH_TO_PLACEHOLDER_PROSE = \
     str(Path(DEFAULT_PATH_TO_PROSE_DIR)/"placeholder_prose.tex")
 DEFAULT_PATH_TO_IMAGE_DIR = "images"
 DEFAULT_PATH_TO_PLACEHOLDER_IMAGE = \
-    str(Path(DEFAULT_PATH_TO_IMAGE_DIR)/"placeholder_image.jpg")
+    str(Path(DEFAULT_PATH_TO_IMAGE_DIR)/"placeholder.png")
 DEFAULT_POEM_CODE_BEGIN = (
     "\\begin{figure*}[p!]\n"+
     "\\bigskip\n"+

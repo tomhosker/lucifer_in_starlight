@@ -25,9 +25,9 @@ def compile_tex_from_string(
         main_file.write(tex_string)
     subprocess.run([latex_command, fn_stem+latex_extension], check=True)
     subprocess.run([latex_command, fn_stem+latex_extension], check=True)
-#    for item in glob(fn_stem+".*"):
-#        if item != fn_stem+output_extension:
-#            os.remove(item)
+    for item in glob(fn_stem+".*"):
+        if item != fn_stem+output_extension:
+            os.remove(item)
 
 def get_contents(path_to):
     """ Return the contents of a file. """
