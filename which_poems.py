@@ -21,6 +21,7 @@ book2 = [
     "The_Orgy_at_Earls_Crescent.tex",
     "Epithalamium.tex",
     "An_Encomium.tex",
+    "Another_Encomium.tex",
     "Vlissingen.tex",
     "Aubade.tex",
     "CGRM.tex",
