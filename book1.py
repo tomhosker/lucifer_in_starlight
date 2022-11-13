@@ -17,7 +17,7 @@ from utilities import compile_tex_from_string, get_contents
 DEFAULT_PATH_TO_BASE = "book1_base.tex"
 DEFAULT_IMAGE_EXTENSIONS = {
     "autumnal": "jpg",
-    "hibernal": "jpg",
+    "hibernal": "png",
     "vernal": "jpg",
     "aestival": "jpg"
 }

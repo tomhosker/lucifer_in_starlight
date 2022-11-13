@@ -4,33 +4,28 @@ repository.
 """
 
 # Standard imports.
-import os
 import shutil
-import subprocess
-from glob import glob
 from pathlib import Path
+
+# Non-standard imports.
+from hosker_utils import install_apt_package
 
 #############
 # FUNCTIONS #
 #############
 
-def install_latex():
-    """ Ronseal. """
-    print("I'm going to need superuser privileges for this bit...")
-    subprocess.run(["sudo", "apt-get", "--yes", "install", "texlive-full"])
-
 def install_fonts():
     """ Ronseal. """
-    files_to_copy = glob("./fonts/*.ttf")
-    destination = str(Path.home()/".fonts")
-    if not Path(destination).exists():
-        os.mkdir(destination)
-    for path in files_to_copy:
-        shutil.copy(path, destination)
+    path_obj_to_source = Path(__file__).parent/"fonts"
+    path_obj_to_dest = Path.home()/".fonts"
+    path_objects_to_copy = path_obj_to_source.glob("*.ttf")
+    path_obj_to_dest.mkdir(parents=True, exist_ok=True)
+    for path_obj in path_objects_to_copy:
+        shutil.copy(str(path_obj), str(path_obj_to_dest))
 
 def install():
     """ Make the necessary installations. """
-    install_latex()
+    install_apt_package("texlive-full")
     install_fonts()
 
 ###################
