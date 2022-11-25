@@ -15,7 +15,7 @@ aestival1 = "she_s_only.tex"
 aestival2 = "i_remember.tex"
 aestival3 = "a_ghost.tex"
 
-book2 = [
+book2 = (
     "A_Love-Letter.tex",
     "Another_Letter.tex",
     "The_Orgy_at_Earls_Crescent.tex",
@@ -29,4 +29,4 @@ book2 = [
     "An_Elegy_for_Kirstie_Foster.tex",
     "An_Elegy_for_J_R_H_Stoke.tex",
     "Lucifer_in_Starlight.tex"
-]
+)
