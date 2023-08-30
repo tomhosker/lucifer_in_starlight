@@ -4,11 +4,10 @@ Book 2 of this project.
 """
 
 # Imports.
-import os
+from pathlib import Path
 
 # Local imports.
-import which_poems
-from utilities import compile_tex_from_string, get_contents
+from .utils import compile_tex_from_string, get_contents, get_which
 
 ##############
 # MAIN CLASS #
@@ -26,7 +25,7 @@ class Book2:
         result = self.base
         result = result.replace("#PACKAGE_CODE", self.package_code)
         the_poems = ""
-        for filename in which_poems.book2:
+        for filename in get_which()["book2"]:
             poem = Poem(filename)
             the_poems = the_poems+poem.printout+"\n\n"
         result = result.replace("#THE_POEMS", the_poems)
@@ -35,7 +34,11 @@ class Book2:
     def build_pdf(self):
         """ Build the PDF using XeLaTeX. """
         compile_tex_from_string(self.tex)
-        os.rename("main.pdf", "book2.pdf")
+        Path(MAIN_FN_STEM+OUTPUT_EXTENSION).rename("book2"+OUTPUT_EXTENSION)
+
+################################
+# HELPER CLASSES AND FUNCTIONS #
+################################
 
 class Poem:
     """ A helper class, this handles the properties of a poem. """
