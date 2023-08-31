@@ -6,15 +6,15 @@ This code defines some utility functions for the project as a whole.
 import json
 import subprocess
 from pathlib import Path
+from time import time
 
 # Constants.
 DEFAULT_LATEX_COMMAND = "lualatex"
 DEFAULT_LATEX_EXTENSION = ".tex"
-DEFAULT_PATH_TO_WHICH = \
-    str(Path(__file__).resolve().parent/"content"/"poems"/"which.json")
+PATH_OBJ_TO_ROOT = Path(__file__).parent.parent
+DEFAULT_PATH_TO_WHICH = str(PATH_OBJ_TO_ROOT/"content"/"poems"/"which.json")
 OUTPUT_EXTENSION = ".pdf"
 MAIN_FN_STEM = "main"
-PATH_OBJ_TO_ROOT = Path(__file__).parent
 
 #############
 # FUNCTIONS #
@@ -24,12 +24,16 @@ def compile_tex_from_string(
         tex_string,
         latex_command=DEFAULT_LATEX_COMMAND,
         latex_extension=DEFAULT_LATEX_EXTENSION,
+        preserve_tex_file=False
     ):
     """ Take a tex file, in the form of a string, and compile it. """
-    with open("main.tex", "w") as main_file:
+    with open(MAIN_FN_STEM+latex_extension, "w") as main_file:
         main_file.write(tex_string)
     subprocess.run([latex_command, MAIN_FN_STEM+latex_extension], check=True)
     subprocess.run([latex_command, MAIN_FN_STEM+latex_extension], check=True)
+    if preserve_tex_file:
+        preserved_fn = str(time())+latex_extension
+        Path(MAIN_FN_STEM+latex_extension).rename(preserved_fn)
     for item in Path().glob(MAIN_FN_STEM+".*"):
         if item.suffix != OUTPUT_EXTENSION:
             item.unlink()

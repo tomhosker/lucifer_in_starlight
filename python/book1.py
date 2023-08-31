@@ -4,8 +4,6 @@ this project.
 """
 
 # Standard imports.
-import os
-from argparse import Namespace
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -27,17 +25,14 @@ PATH_OBJ_TO_BK1_POEMS_DIR = PATH_OBJ_TO_ROOT/"content"/"poems"/"book1"
 PATH_OBJ_TO_PRAYERS_DIR = PATH_OBJ_TO_ROOT/"content"/"prayers"
 PATH_OBJ_TO_PROSE_DIR = PATH_OBJ_TO_ROOT/"content"/"prose"
 PATH_OBJ_TO_IMAGES_DIR = PATH_OBJ_TO_ROOT/"content"/"images"
-
 # Paths.
 PATH_TO_BASE = str(PATH_OBJ_TO_TEX_DIR/"book1_base.tex")
 PATH_TO_PACKAGE_CODE = str(PATH_OBJ_TO_TEX_DIR/"package_code.tex")
 PATH_TO_PLACEHOLDER_POEM = str(PATH_OBJ_TO_ROOT/"poems"/"placeholder_poem.tex")
 PATH_TO_PLACEHOLDER_PRAYER = \
     str(PATH_OBJ_TO_PRAYERS_DIR/"placeholder_prayer.tex")
-PATH_TO_PLACEHOLDER_PROSE = \
-    str(PATH_OBJ_TO_ROOT/"poems"/"placeholder_prose.tex")
-PATH_TO_PLACEHOLDER_IMAGE = \
-    str(PATH_OBJ_TO_ROOT/"poems"/"placeholder_image.tex")
+PATH_TO_PLACEHOLDER_PROSE = str(PATH_OBJ_TO_PROSE_DIR/"placeholder_prose.tex")
+PATH_TO_PLACEHOLDER_IMAGE = str(PATH_OBJ_TO_IMAGES_DIR/"placeholder_image.png")
 # Tex snippets.
 POEM_CODE_BEGIN = (
     "\\begin{figure*}[p!]\n"+
@@ -61,6 +56,7 @@ PRAYER_CODE_END = "\\end{quote}"
 @dataclass
 class Book1:
     """ The class in question. """
+    preserve_tex_file: bool = False
     # Generated fields.
     tex: str = None
     base: str = None
@@ -71,7 +67,7 @@ class Book1:
     images: list = None
 
     def __post_init__(self):
-        self.base = get_contents(self.path_to_base)
+        self.base = get_contents(PATH_TO_BASE)
         self.poems = self.get_poems()
         self.prayers = self.get_prayers()
         self.prose = self.get_prose()
@@ -79,66 +75,53 @@ class Book1:
 
     def get_poems(self):
         """ Fetch the desired poems from disk. """
-        if self.force_placeholders.force_placeholders_poems:
-            result = get_poems_all_placeholders()
-        else:
-            poem_dir = PATH_OBJ_TO_BK1_POEMS_DIR
-            result = {
-                "autumnal1": get_poem(str(poem_dir/WHICH_BK1["autumnal1"])),
-                "autumnal2": get_poem(str(poem_dir/WHICH_BK1["autumnal2"])),
-                "hibernal1": get_poem(str(poem_dir/WHICH_BK1["hibernal1"])),
-                "hibernal2": get_poem(str(poem_dir/WHICH_BK1["hibernal2"])),
-                "vernal1": get_poem(str(poem_dir/WHICH_BK1["vernal1"])),
-                "vernal2": get_poem(str(poem_dir/WHICH_BK1["vernal2"])),
-                "aestival1": get_poem(str(poem_dir/WHICH_BK1["aestival1"])),
-                "aestival2": get_poem(str(poem_dir/WHICH_BK1["aestival2"])),
-                "aestival3": get_poem(str(poem_dir/WHICH_BK1["aestival3"]))
-            }
+        poem_dir = PATH_OBJ_TO_BK1_POEMS_DIR
+        result = {
+            "autumnal1": get_poem(str(poem_dir/WHICH_BK1["autumnal1"])),
+            "autumnal2": get_poem(str(poem_dir/WHICH_BK1["autumnal2"])),
+            "hibernal1": get_poem(str(poem_dir/WHICH_BK1["hibernal1"])),
+            "hibernal2": get_poem(str(poem_dir/WHICH_BK1["hibernal2"])),
+            "vernal1": get_poem(str(poem_dir/WHICH_BK1["vernal1"])),
+            "vernal2": get_poem(str(poem_dir/WHICH_BK1["vernal2"])),
+            "aestival1": get_poem(str(poem_dir/WHICH_BK1["aestival1"])),
+            "aestival2": get_poem(str(poem_dir/WHICH_BK1["aestival2"])),
+            "aestival3": get_poem(str(poem_dir/WHICH_BK1["aestival3"]))
+        }
         for key in result:
-            result[key] = self.poem_code_begin+result[key]+self.poem_code_end
+            result[key] = POEM_CODE_BEGIN+result[key]+POEM_CODE_END
         return result
 
     def get_prayers(self):
         """ Fetch the desired poems from disk. """
-        if self.force_placeholders.force_placeholders_prayers:
-            result = get_prayers_all_placeholders()
-        else:
-            prayers_dir = PATH_OBJ_TO_PRAYERS_DIR
-            result = {
-                "autumnal": get_prayer(str(prayers_dir/"autumnal.tex")),
-                "hibernal": get_prayer(str(prayers_dir/"hibernal.tex")),
-                "vernal": get_prayer(str(prayers_dir/"vernal.tex"))
-            }
+        prayers_dir = PATH_OBJ_TO_PRAYERS_DIR
+        result = {
+            "autumnal": get_prayer(str(prayers_dir/"autumnal.tex")),
+            "hibernal": get_prayer(str(prayers_dir/"hibernal.tex")),
+            "vernal": get_prayer(str(prayers_dir/"vernal.tex"))
+        }
         for key in result:
-            result[key] = \
-                self.prayer_code_begin+result[key]+self.prayer_code_end
+            result[key] = PRAYER_CODE_BEGIN+result[key]+PRAYER_CODE_END
         return result
 
     def get_prose(self):
         """ Fetch the desired prose passages from disk. """
-        if self.force_placeholders.force_placeholders_prose:
-            result = get_prose_all_placeholders()
-        else:
-            prose_dir = PATH_OBJ_TO_PROSE_DIR
-            result = {
-                "autumnal": get_prose(str(prose_dir/"autumnal.tex")),
-                "hibernal": get_prose(str(prose_dir/"hibernal.tex")),
-                "vernal": get_prose(str(prose_dir/"vernal.tex")),
-                "aestival": get_prose(str(prose_dir/"aestival.tex"))
-            }
+        prose_dir = PATH_OBJ_TO_PROSE_DIR
+        result = {
+            "autumnal": get_prose(str(prose_dir/"autumnal.tex")),
+            "hibernal": get_prose(str(prose_dir/"hibernal.tex")),
+            "vernal": get_prose(str(prose_dir/"vernal.tex")),
+            "aestival": get_prose(str(prose_dir/"aestival.tex"))
+        }
         return result
 
     def get_images(self):
         """ Fetch the desired paths to images from disk. """
-        if self.force_placeholders.force_placeholders_images:
-            result = get_images_all_placeholders()
-        else:
-            result = {
-                "autumnal": get_chapter_image("autumnal"),
-                "hibernal": get_chapter_image("hibernal"),
-                "vernal": get_chapter_image("vernal"),
-                "aestival": get_chapter_image("aestival")
-            }
+        result = {
+            "autumnal": get_chapter_image("autumnal"),
+            "hibernal": get_chapter_image("hibernal"),
+            "vernal": get_chapter_image("vernal"),
+            "aestival": get_chapter_image("aestival")
+        }
         return result
 
     def build_tex(self):
@@ -169,8 +152,11 @@ class Book1:
         self.tex = result
 
     def build_pdf(self):
-        """ Build the PDF using XeLaTeX. """
-        compile_tex_from_string(self.tex)
+        """ Build the PDF. """
+        compile_tex_from_string(
+            self.tex,
+            preserve_tex_file=self.preserve_tex_file
+        )
         Path(MAIN_FN_STEM+OUTPUT_EXTENSION).rename("book1"+OUTPUT_EXTENSION)
 
 ####################
@@ -179,8 +165,9 @@ class Book1:
 
 def get_content(path_to_actual, path_to_placeholder):
     """ Return the contents of a file, or return a placeholder if necessary. """
-    if path_to and Path(path_to).exists():
-        get_contents(path_to)
+    if path_to_actual and Path(path_to_actual).exists():
+        return get_contents(path_to_actual)
+    print("Could not find: "+str(path_to_actual))
     return get_contents(path_to_placeholder)
 
 def get_poem(path_to):
@@ -203,47 +190,3 @@ def get_chapter_image(stem):
         result = str(path_obj)
         return result
     return PATH_TO_PLACEHOLDER_IMAGE
-
-def get_poems_all_placeholders():
-    """ Ronseal. """
-    result = {
-        "autumnal1": get_contents(None),
-        "autumnal2": get_contents(None),
-        "hibernal1": get_contents(None),
-        "hibernal2": get_contents(None),
-        "vernal1": get_contents(None),
-        "vernal2": get_contents(None),
-        "aestival1": get_contents(None),
-        "aestival2": get_contents(None),
-        "aestival3": get_contents(None)
-    }
-    return result
-
-def get_prayers_all_placeholders():
-    """ Ronseal. """
-    result = {
-        "autumnal": get_contents(None),
-        "hibernal": get_contents(None),
-        "vernal": get_contents(None)
-    }
-    return result
-
-def get_prose_all_placeholders():
-    """ Ronseal. """
-    result = {
-        "autumnal": get_contents(None),
-        "hibernal": get_contents(None),
-        "vernal": get_contents(None),
-        "aestival": get_contents(None)
-    }
-    return result
-
-def get_images_all_placeholders():
-    """ Ronseal. """
-    result = {
-        "autumnal": PATH_TO_PLACEHOLDER_IMAGE,
-        "hibernal": PATH_TO_PLACEHOLDER_IMAGE,
-        "vernal": PATH_TO_PLACEHOLDER_IMAGE,
-        "aestival": PATH_TO_PLACEHOLDER_IMAGE
-    }
-    return result
