@@ -1,0 +1,537 @@
+\documentclass{amsbook}
+
+\usepackage[
+    a5paper,
+    hmargin=28mm,
+    vmargin=24mm,
+    marginparwidth=18mm,
+    marginparsep=3mm
+]{geometry}
+
+\usepackage{
+    verse,
+    microtype,
+    mathtools,
+    marginnote,
+    graphicx,
+    ragged2e,
+    xstring,
+    afterpage,
+    pifont
+}
+
+\usepackage[hidelinks]{hyperref}
+
+\hyphenpenalty=1000
+
+\newcommand{\addpoemtolist}[1]{}
+\newcommand{\poeticmarginnote}[1]{\marginnote{\footnotesize #1}}
+\newcommand{\poeticfrac}[2]{\sfrac{$#1$}{$#2$}}
+\newcommand{\prosesep}{
+    \bigskip
+    \centerline{\vbox{\hrule width 2in}}
+    \bigskip
+    \bigskip
+}
+
+\newcounter{pageoffset}
+\newcounter{pagedifference}
+\newcommand\blfootnote[1]{%
+    \begingroup
+    \renewcommand\thefootnote{}\footnote{#1}%
+    \addtocounter{footnote}{-1}%
+    \endgroup
+}
+
+\newcommand{\poemone}{}
+\newcommand{\poemtwo}{}
+\newcommand{\poemthree}{}
+\newcommand{\printpoems}{%
+    \setcounter{pagedifference}{\value{page}-\value{pageoffset}}
+    \IfEq{\thepagedifference}{2}
+    { \poemone \clearpage}{}
+    \IfEq{\thepagedifference}{5}
+    {\poemtwo \clearpage
+    \poemthree \clearpage}{}
+    \afterpage{\printpoems}%
+}
+\newcommand{\initprintpoems}{
+    \setcounter{pageoffset}{\thepage-1}
+    \afterpage{\printpoems}
+}
+
+\newcommand{\attrib}[1]{\nopagebreak{\raggedleft\footnotesize #1\par}}
+
+
+\title{The First Book. Lucifer in Starlight}
+
+\begin{document}
+    \frontmatter
+
+    \maketitle
+
+    \thispagestyle{empty}
+    \topskip0pt
+    \vspace*{\fill}
+    \noindent \textit{The Lord said to Satan, From where have you come? Satan answered the Lord and said, From going to and fro on the earth, and from walking up and down on it...}
+    \vspace*{\fill}
+    \clearpage
+
+    \tableofcontents
+
+    \mainmatter
+
+    \chapter{Autumnal}
+
+    \renewcommand{\poemone}{
+        \begin{figure*}[p!]
+\bigskip
+\ding{72}
+\bigskip
+\settowidth{\versewidth}{In the room, we kissed and drank old fashioneds,}
+\begin{verse}[\versewidth]
+Afterwards, we drove back to the hotel,\\*
+\vin The lights in the dockyard just coming on\\
+And the sun bedding down under the causeway.\\
+\vin The night was heavy with rain and you fell asleep\\*
+To something by Snow Patrol or Radio 4.\\!
+
+You blessed the meal when we sat down to supper,\\*
+\vin And after, with your hands around the cup.\\
+In the room, we kissed and drank old fashioneds,\\
+\vin Watched the first half an hour of \textit{Heartbreak Ridge};\\*
+Then you pulled off your teeshirt with the chinese prints.\\!
+
+I could never admit that I liked it: but\\*
+\vin The light from the lampstand gentling your body,\\
+A touch of bois des \^iles behind each ear,\\
+\vin You laying yourself back on the duvet like\\
+You were a teenager and this was the first time.
+\end{verse}
+\end{figure*}
+    }
+    \renewcommand{\poemtwo}{
+        \begin{figure*}[p!]
+\bigskip
+\ding{72}
+\bigskip
+\settowidth{\versewidth}{In the dark, the heel of my hand found your breastbone,}
+\begin{verse}[\versewidth]
+I woke up between you \& your sister.\\*
+\vin (When you were kids you'd sleep in the same bunk,\\
+So you say; now she's apt to feel jealous.)\\*
+\vin All three had fallen asleep in our clothes.\\!
+
+You knelt beside me and gave me my glasses.\\*
+\vin Someone stirred and checked through his phone.\\
+It was nighttime: a rich lampblack dark. In the hallway\\*
+\vin Streetlights fondled through the fronds of a birch.\\!
+
+David himself would've run out of verses\\*
+\vin In praise of that kiss, the deep scar at your waist.\\
+In the dark, the heel of my hand found your breastbone,\\*
+\vin Guessing its line by touch and the mind's eye.\\!
+
+Were it not for you I would've missed the snowstorm\\*
+\vin Blanching the path down to the weir from the railbridge,\nobreak\\
+The emptiness beyond the arbour,\\*
+\vin Neville's Cross and Pity Me.
+\end{verse}
+\end{figure*}
+    }
+    \renewcommand{\poemthree}{
+        \bigskip
+\centering \ding{58}
+\bigskip
+\begin{quote}
+God, who in former times heard the petitions of the lowest creatures, take pity on me, and have mercy on the work of your hands. My crimes are so hateful that I have lost the right even to look up and enjoy the sky: the warmth of the sun, and the splendour of the heavens. They cling to me like a second shadow, and weigh me down like a yoke of solid iron. My punishment is more than I can bear; forgive me, Lord. Help me to bend the knee of my heart, and tune my heart strings to your music. Amen.
+\end{quote}
+    }
+    \initprintpoems
+
+    \begin{quote}
+        {\footnotesize \textsc{Argument:} How the two lovers from \textit{William's Farewell} -- having suffered an unrecoverable loss -- wandered across England; and the things that happened on their way.}
+    \end{quote}
+    \bigskip
+
+    \noindent It was about four o'clock when we arrived. The fields lay deep in fog. The tarmac of the avenue sped quietly beneath us, marbled with oilslicks and rainwater. It was Edwardian apparently, the house -- all pale stone and subtle volutes. Suzy came out to meet us on the front steps. Her expression was warm, and her hair was a mess.
+
+Then we sat down for tea and cakes. With the big bay window and the grim weather outside, we all felt glad of the fire. I was so nervous, seeing Suzy again after all this time, I lost my appetite, but she wasn't the sort to take offence. Absent friends were toasted. Suzy grilled you excitedly about life in Westphalia. When we'd finished, you stacked the things up onto the tray, and I carried it out.
+
+In the kitchen, Suzy introduced us to one of the other women, Jess. She must have been half Suzy's age, twice ours -- and yet already there little streaks of grey in her ponytail. She was nice, something of a gentlewoman. She talked in an animated fashion about a faith healing at a recent prayer meeting, emphasising certain points with the knife with which she chopped the onions. I thought how she must have had the lads running after her when she was our age, and wondered if she was married. Then Suzy ushered us into the garden.
+
+Apparently it had been a good year for the jasmine, but it was October now and what hadn't been cut back hung shrivelled and brown. A narrow path ran out across the lawn, down to the river. The cherry tree was full of droplets of rain. Through a plastic window, the shelves of the tool shed presented arms: the tines and blades properly oiled and stacked. It might be good to find work here, I thought to myself, come spring. Then we came in out of the cold.
+
+A long windowed corridor separated the kitchen from the chapel: a handsome room, oak-panelled and oak-floored, with bean bags spread around the altar. In place of a cross there was a painting of the crucifixion, almost like a photograph. His eyes were bulging, bones visibly broken, the hair on his chest matted with blood. I remembered a passage Suzy had given me on a piece of card during our first acquaintance -- `Christ has no body on earth now but yours' -- then I looked at you. You didn't seem to pay any of it much attention, but perhaps you just kept your eyes lowered out of respect. I find you very hard to read sometimes, and that gets to me.
+
+After that, Suzy took us upstairs to another room. It was as big as the lounge and similarly furnished, but the chairs were laid out in a more formal circle. Suzy said that everyone gathered here every day, first thing in the morning and after supper. In the evenings, the women might want to say sorry for the sins of the day, or tell stories about the things that had happened to them in their lives. There was never any pressure to speak though, she said, nothing to worry about.
+
+There was a library just across the landing: a gorgeous space with a thick red carpet and a stone fireplace. There were eight mahogany bookshelves protruding from the walls, four on the left and four on the right. Then in the centre space, beneath the window, was an enormous copy of \emph{Pilgrim's Progress} laid open on a lectern. The binding had been carved out of a rich red leather, and inside were the most intricate woodcuts: Apollyon was there with all his teeth and fish scales, and Discretion with suitably come-hither eyes. I called you over and asked if you'd ever read it. You said you tried once when you were fourteen, but it didn't really work in your language.
+
+Then Suzy led us up the final set of stairs, to where the bedrooms were. Near the gable end she showed you into the place that had been chosen for you. It was fairly bare: a small wardrobe, a desk and a bed, the walls painted matt magnolia. I placed your holdall on the duvet and began to unpack: your jeans and t-shirts, bras and underwear, your blue silk dress, your Bible. The window looked out onto the garden and over into the valley beyond: the moor and husks of industry. Everything was black or gold -- except the river, which was silver -- the sun being stayed an inch over the col.
+
+Suzy said to me, `You'd best be going now. I wish I could let you stay the night, but really I'm breaking the rules just having you here now.' And you looked at me like we were the last two people left in the world, like the cripple at the Beautiful Gate. We hugged tenderly, awkwardly.
+
+`Don't worry,' I said. `I'll be back in a couple of weeks.'
+
+\prosesep
+
+Moreover, there were two blond women drinking Campari at a table in the far corner of the taproom. I raised my eyebrows; you consented; they seemed happy enough to be chatted to, and so the four of us sat down together round the same board. They both looked about thirty years old, with that slackness in the flesh -- here barely perceptible -- that a woman can't help but acquire after her second or third child; and they were dressed shabbily, although it was clear they were wearing their best clothes. The conversation went well; it was awkward, but all parties were eager to get on; and you were happy to bring the two of them drink after drink.
+
+Later, they were sat on the sofa of our living room; you were laid back in the armchair opposite, and there was I stood in the middle. Then the larger of the two -- that is, the taller -- quickly stripped naked and, leaning back on the cushions, put two fingers inside herself. I pulled her up by her right hand and hugged her close to me. She seemed tiny now; my forearm easily spanned the width of her shoulders, and she was bony -- not emaciated, but quite thin. Meanwhile the other woman had stripped herself too. I felt the weight of my joy in the back of my throat. I wanted both of them. Then the taller one knelt down and pulled down my shorts, and all could see that I was already well hard.
+
+I picked her up and laid her back on the sofa. I knelt between her legs and, with your permission, entered her -- quite forcefully, although she showed no sign of discomfort or distress. Now how can I describe the innermost texture of any woman? All I can say is, it was sweet.
+
+    \chapter{Hibernal}
+
+    \renewcommand{\poemone}{
+        \begin{figure*}[p!]
+\bigskip
+\ding{72}
+\bigskip
+\settowidth{\versewidth}{I'm not used to sleeping with someone else.}
+\begin{verse}[\versewidth]
+I'm not used to sleeping with someone else.\\*
+\vin I lie two thirds asleep holding you stirring --\\
+A hand round your heart, the prickle of your \textit{mons}.\\
+\vin All this morning I've been thinking about\\
+That tender morsel of lukewarmth,\\*
+\vin While the moon and the stars wear themselves out.\nobreak\\!
+
+The snow is quietly silting up the glasswork\\*
+\vin When you open your eyes and paw my palm.\\
+The flesh of your neck is like opened fruit,\\
+\vin And your arms around my waist hurt.\\
+Here is your tongue, and here is your navel;\\*
+\vin These are your hands and this is your side.\\!
+
+I remember the first real girlfriend I had,\\*
+\vin Blue eyes and a scholar's stammer.\\
+She was an atheist; she was the only girl\\
+\vin I ever knew who slept more deeply than me.\\
+I used to hold her, of a wintertime, and\\*
+\vin Trace the sign of the cross on her brow.
+\end{verse}
+\end{figure*}
+    }
+    \renewcommand{\poemtwo}{
+        \begin{figure*}[p!]
+\bigskip
+\ding{72}
+\bigskip
+\settowidth{\versewidth}{The tide turns in the river, day becomes dusk,}
+\begin{verse}[\versewidth]
+The tide turns in the river, day becomes dusk,\\*
+\vin And you, as shy as a fox (or\\
+My own heart), steal in\\
+\vin In your mother's blue silk nightdress,\\
+Fringed with fur and a hem of white satin --\\*
+\vin A quaint match for your 15 years.\\!
+
+Fire is not quenched by the dark, but\\*
+\vin Love, sometimes, is blunted by fear:\\
+You have untied the cord from your waist,\\
+\vin Laid that coy nakedness out on the quilt:\\
+But, for all my teenage desire, I\\*
+\vin Could not make myself hard for you.\\!
+
+You pressed your face against me when we kissed,\\*
+\vin After, I remember, and my head swam --\\
+`Young girls should show their nightgowns\\
+\vin To men worthy of the name' --\\
+The branches blackened and bare in the courtyard\\*
+\vin Because they could not be otherwise.
+\end{verse}
+\end{figure*}
+    }
+    \renewcommand{\poemthree}{
+        \bigskip
+\centering \ding{58}
+\bigskip
+\begin{quote}
+God, I am your possession, the son of your workman, the son of your washerwoman, and you hold my head in your hands. All your wishes are just, and your wishes are always carried out. I ask you, by every name with which you have named yourself, or which you have taught to any of your creatures, or which you have revealed in your book, or which you have kept within yourself in your knowledge of the unseen: make your book into the knocking of my heart and the brightness of my eyes, and a departure for my sorrow and a release from all distress. Amen.
+\end{quote}
+    }
+    \initprintpoems
+
+    How easily one lets blessedness slip away. For example: this morning in the hotel. We had been together all night (warmth to warmth, the hands of each in the softnesses of the other) and then I woke up and heard you already in the shower. It was still dark outside, only the streetlights glowing through the curtains; and also, even though I couldn't see or hear it, I remember in some sense I could feel the snow fall. I fumbled for my phone, looked at it, felt vaguely wronged. Then I went back to sleep.
+
+When I woke up again you were standing over me, a murderous look in your eyes, and your wet hair all on end like a devil's halo. I took the hint, showered and dressed quickly. Then you put down your book, put on your shoes, and we went downstairs.
+
+It's a fair walk up to the cathedral: not far, but steep. And I always enjoy it, even in foul weather. Today was far from foul: one of those clear cold days when the mind feels intensely awake: cornflower blue skies and that marvellous crunch of untouched snow underfoot. It was a few hot minutes climbing the stone steps winding up from the river, and there she was: the handsomest of our English cathedrals.
+
+It was lovely and warm inside; I explained to you why the climate inside these big stone buildings is always the opposite of the weather outdoors. In a side chapel, a priest and a handful of congregants had just finished celebrating the eucharist, the altar still decked out in Epiphany white and gold. I lit two candles and prayed for a few moments. I thought about my grandfather, who had died unhappily and not exactly in a state of grace. I also thought about that poor soul from my seagoing days. He had joined a ship in Portland -- a few months before I joined that ship myself, my last deployment but one -- and had hanged himself from the deckhead, next to one of the tumble driers. Then I made my umpteenth pilgrimage to the shrine of St ---.
+
+Bernie was stood waiting for us when we got outside. He was still wearing his naval greatcoat, and I teased him that he looked like he'd just got back from marshalling lifeboats off of the \textit{Titanic}. He said he knew a good place, down one of the alleyways off Silver Street, opposite the Seven Altars Cafe: a pub called The Marlowe. So we followed him there, a five minute walk. It wasn't much to look at; to tell you the truth it looked like a real spit and sawdust kind of place. But the beer was mostly local, and the all day breakfast came with a Cumberland sausage of a noticeably high end stamp -- not to mention that the taproom had a good view of the river and the snowy countryside beyond it. It was a good effort on Bernie's part; it reminded me why I liked him.
+
+Bernie and myself got to talking about fornication. This was comfortable territory; we had sailed together a couple of times, and each revelled in the other's extravagant bad taste. To your credit, you were content just to listen, only butting in with a witticism of your own very occasionally; you had long since internalised the scriptural proverb about the imagination of a man's heart being evil from his youth. Time went by at an alarming rate, as it tends to with an old friend and a functionally bottomless supply of good beer. Then at about half past two in the afternoon we got to talking about which was worse, very hot weather or very cold. You remarked to Bernie that his opinion was the expert one; he must have gone through plenty of both in Afghanistan. He was silent for a moment. Then he said softly, `Yes. Yes, I must have. But the heat was worse.' And he smiled at you with uncharacteristic meekness.
+
+I winked at you with the eye Bernie couldn't see from his side of the table. We both -- Bernie and myself -- disliked talking about our service in detail, albeit for different reasons. `It's not that I don't want to talk about it,' he once told me; `it's that no one really wants to listen. Everyone has these preconceived ideas of what it must have been like.' In the beginning, he was troubled by more abstract considerations: Afghanistan's reputation as a graveyard for foreign armies, the transparent lunacy of sending British sailors to resolve political crises in Central Asia. Later on, he found more immediate concerns. I never pressed him, but he alluded several times to patrolling the outskirts of Camp Bastion; the other side had got very good at firing rockets so as to explode over the heads of our guys, often with lethal effect. But Bernie had so much he could have remembered with pride. I, on the other hand, was never sent to fight; the closest I ever got to a warzone was admiring the mountains of Yemen through my cabin porthole. And my career had suffered from, one might say, several other infelicities. That was what lay behind my own reticence.
+
+Given the lull in the conversation, I excused myself to look round a bookshop. It was just round the corner, a secondhand place, and if I didn't go now, I told yourself and Bernie, it would shut before I had a chance to pay it a visit. I stayed an hour -- I would have stayed longer but for you -- yet the smell of the venerable paper and the craftsmanship of the bindings always brightened my mood. I left with an Edwardian volume of translations from Tibullus. When I got back to the pub, I managed to slip in without you noticing me; I stopped for a few moments and watched you both chatting excitedly, my ears still burning from the cold. I had no fear of either of you ever betraying me, but sometimes I wondered if you hadn't chosen the wrong man. We had another drink; I must have had at least seven pints while we were talking but, spaced out over an afternoon, and with food, I was only just then beginning to feel drunk. Then we all left together, returning the same way as we had come.
+
+Watching the sun set over the cathedral always gets me down. The symbolism is too obvious and too true: my country's dwindling fortunes, and the twilight of her Christianity. How can I live with my country's failures when I can barely come to terms with my own? Has any nation ever come back from such gangrenous loculations? A couple, maybe; many more were stubbed out in an instant; most fell apart over a few generations. Indeed the last and best of the Roman emperors told his soldiers shortly before the bloodletting which finished off his dominion:
+
+\begin{quote}
+    I can tell you this city once mastered the whole world: Armenia, Achaea, Macedonia, Italy, Georgia, Mesopotamia, Syria, Spain, Illyria, Egypt, England and France. But now this inhuman sultan wants to violate her and make a slave out of the city of the world's desire. And our holy churches, where the Most Holy Trinity was worshipped, where the Holy Spirit was glorified in song, where angels were heard praising the incarnation and the divinity of God's Word, he wants to turn into shrines of his blasphemy, shrines of the mad and false prophet Muhammad, as well as into stables for his horses and camels.
+\end{quote}
+
+Time continues to flow at a uniform rate; history proceeds according to God's immutable, inscrutable plan. And yet anything can happen: invincible armies crumple like tinfoil, whole nations spring up overnight. Wystan Auden, that great purveyor of homosexual love poetry, enjoyed, in middle age, a series of liaisons with a married woman -- a fact that I ought to remind myself of when claiming to discern the pattern behind events. If only I had more courage, things might have worked out; but I have you, my beloved, despite this darkness I can feel coming on.
+
+    \chapter{Vernal}
+
+    \renewcommand{\poemone}{
+        \begin{figure*}[p!]
+\bigskip
+\ding{72}
+\bigskip
+\settowidth{\versewidth}{Where the sunlight catches those wine-dark stones.}
+\begin{verse}[\versewidth]
+I got this knife off an arab trader\\*
+\vin In odds and ends in a stall in Algiers.\\
+I remember his hoarse voice and hollow stare,\\*
+\vin The grime staining his lips and fingers.\\!
+
+See that mark there. That's hand-worked sheffield steel.\\*
+\vin Those are real rubies set into the hilt.\\
+But every man who ever held its weight\\*
+\vin Ended up killing someone that he loved.\\!
+
+A father who walked in on his young wife\\*
+\vin With his own son gutted him in the street.\\
+A greek sailor sawed through his boatswain's windpipe\\*
+\vin Over a bad hand and a packet of smokes.\\!
+
+I keep this knife tucked into my work belt,\\*
+\vin Where the sunlight catches those wine-dark stones.\\
+And I, that care for no one in this world,\\*
+\vin Am terrified I'll only turn it on myself.
+\end{verse}
+\end{figure*}
+    }
+    \renewcommand{\poemtwo}{
+        \begin{figure*}[p!]
+\bigskip
+\ding{72}
+\bigskip
+\settowidth{\versewidth}{Where as a younger man I'd man spent one summer.}
+\begin{verse}[\versewidth]
+Bridgetown, a night in a gale with a girl,\\*
+The doctor I met on board, talking over\\
+Old lost lovers and \textit{The Last Picture Show}\\
+With cold beef and chocolates and a rough scotch.\\
+Darkness. I lay in her bunk\\
+And travelled in dreams back to a garden in Rome\\
+Where as a younger man I'd man spent one summer.\\
+You and Alex were behind the bar. It was freezing,\\*
+And the snow fell through the rich blackness into our drinks.\\!
+
+Ah there you were, Isla, with those curious clear blue eyes\\*
+And tangled soft brown hair like a river of living bronze.\\
+The time between us is nothing at all,\\*
+Nor death and the river of forgetfulness.
+\end{verse}
+\end{figure*}
+    }
+    \renewcommand{\poemthree}{
+        \bigskip
+\centering \ding{58}
+\bigskip
+\begin{quote}
+A cup of wine was offered me, and I drank it in the sweetness of my delight in you. My feet have found their furrow, my mouth its bridle. The lover has found his beloved, and Jack has his Jill. A cup of wine was offered me, because your vines were heavy with the riches therein; because whoever touches this wine tastes life itself, and whoever takes a draught becomes immortal; and if the whole world perished, I would not. I will live by the wine of this cup forever. Alleluia.
+\end{quote}
+    }
+    \initprintpoems
+
+    \noindent I remember, when I was seventeen, kissing a girl in a hotel restaurant in Sorrento. It was in the early hours of the morning; apart from us and another teenage couple, the place was deserted. I remember that she was wearing her pyjamas and an elegant gold pendant and a heavy, sweet perfume. She was Italian but she was a tourist like me, a Venetian; the south is really another country. The only illumination came from the lights in the street outside. Even when one puts to one side the lack of choosiness of drunk seventeen year old males, she was superlatively beautiful. She pressed her face against me and kissed me, and I put my left hand on the bare skin of her hip. She continued to kiss me, and I moved that hand further under her pyjamas. I remember the nipple of her right breast grazed the ring finger of my left hand, the first time I had touched that part of a woman since I took my mother's milk.
+
+An otherwise obscure philosopher wrote that one cannot step into the same river twice -- because it's not the same river and it's not the same man -- but I am strongly inclined towards the opposite point of view. All the molecules in my body -- lips, eyes and hands -- have been replaced several times since that evening in Italy, and yet these hands, in the only sense which has any practical significance, are the same hands that touched that much-missed Italian. The river is not the same thing as the water flowing through it.
+
+\prosesep
+
+Suppose I cut myself one afternoon while removing rust with a knife. The wound runs almost the entire length of the index finger of my left hand. If it's deep enough, it will leave an impressive scar, which, though it may fade, will be with me for the rest of my life. As with every other part of my body, all the molecules in the scar will be replaced over time. But the scar itself will remain, and if, years later, I were to point to it and say that this is where I cut myself, I would be telling the truth.
+
+\prosesep
+
+I have this recurring dream about my grandmother. I am standing in the living room of her old house, and she lets herself in through the front door. Where has she been? Had she not died? `Yes,' she says. `But I was only dead for a few months. That doesn't count.' (In fact, she has been dead many years, but this never occurs to me in my dream.) In life, she was not any kind of scholar, nor would she ever have become one even if she had been born into great privilege. But in my dream she utters sentences of the most dazzling sagacity, the logic of which inevitably falls apart in the morning. And the same unselfconscious kindness is there, the same squeeze of the hand as I remember. If I try to ask her about what it feels like to be dead, she dissolves into another dream.
+
+\prosesep
+
+If we live again, will it be as a physical creature of some kind, or will it be as an intangible spirit? I am inclined to believe that any afterlife worthy of the name would have to take a corporeal and physical form, although without necessarily conforming to the physics of this present reality; indeed I have difficulty believing that a wholly intangible existence is even possible in the first place. But, if my body is so indispensible to my living again, how could anyone guarantee that this new body was in fact my body, and not some kind of living wetsuit that my consciousness had stretched over itself? Does this problem actually point towards the impossibility of an afterlife?
+
+\prosesep
+
+When I try to imagine an eternity worth inhabiting, my mind turns inexorably towards the resurrection appearances described in the gospels. I can think of three reasons for this. (1) My upbringing was such that I instinctively think about death and the hereafter within the thought-world of Christianity. (2) The gospels seem to answer some of the philosophical objections to an afterlife -- continuity, identity, boredom, etc -- in a robust fashion. (3) The accounts of Jesus' resurrection have a compelling strangeness, not unlike an etching of an impossible object, which draw in the mind's eye long after being heard.
+
+Assume for a moment that Jesus really did rise from the dead. Did he, on Sunday morning, inhabit the same body that the soldiers had nailed to the cross on Friday lunchtime, or was he a ghost of some sort? The gospels stress the physicality of the risen Christ. In Matthew, the women cling to his feet. In John, he famously invites one of his disciples -- who probably earned his nickname Thomas, a Greek speaker's mangling of the Aramaic word for twin, due to a striking physical resemblance to Jesus -- to put his fingers in the five wounds of the crucifixion. Luke tackles this question quite explicitly: \textit{Touch me and see. A ghost does not have flesh and bones as you see that I have.} But this body, however tangible, is not like any normal body. The risen Jesus walks through walls, appearing and disappearing at will, and barely stays in one locality for more than the length of a conversation. In the famous story of the road to Emmaus, he talks with two of his followers for what must have been several hours, but they do not recognise him -- except when, at the end of their journey, he breaks bread in a distinctive way, at which point he vanishes in plain sight. The risen Christ seems both to have re-entered his mortal body and, simultaneously, to have transmuted that same body into a new kind of matter.
+
+\textit{How are the dead raised? With what kind of body do they come? You foolish man. What you sow does not come to life unless it dies, and what you sow is not the body which is to be, but a bare kernel.}
+
+One other thing: the gospels emphasise the historicity of Jesus' resurrection, Luke especially. But this only rediscovers the paradox at the heart of the resurrection from another point of view. History has to do with finding similarities and differences in order to understand what happened, but, if the descriptions of the resurrection are literally true, there is nothing with which to make a comparison.
+
+\prosesep
+
+I have no idea whether we live again. It hardly seems likely from either the scientific or philosophical point of view. But all things are possible with God, and, when I try to imagine an eternity worth inhabiting, what I see are the resurrection appearances described in the gospels.
+
+    \chapter{Aestival}
+
+    \renewcommand{\poemone}{
+        \begin{figure*}[p!]
+\bigskip
+\ding{72}
+\bigskip
+\settowidth{\versewidth}{To her tapes, and sometimes smile, belle of Coach F.}
+\begin{verse}[\versewidth]
+She's only nine tenths beautiful,\poeticmarginnote{Blind Girl on a Train}\\*
+\vin And yet we men are standing reverently around,\\
+\vin \vin Watching her listening\\*
+To her songs, and sometimes smile, belle of Coach F.\\!
+
+Her hair is tangled \& black like black-bryony,\\*
+\vin Ringletting down to her seat, beneath which\\
+\vin \vin A violin case\\*
+Edged with red velvet is tucked between her calves.\\!
+
+And those cheeks, as tender as meltwater\\*
+\vin And as clear, that clear voice purling\\
+\vin \vin More rosily than mulled wine,\\*
+That six hand waist no soul has yet handled.\\!
+
+But the light fails, lovers meet and journeys end.\\*
+\vin And she alights, to be met by her first sweetheart,\\
+\vin \vin Whose head she kisses\\*
+As if the world, and not her, had gone blind:\\!
+
+And nothing matters more than a girl,\\*
+\vin Of a velvety, late august early evening,\\
+\vin \vin With her fingers\\*
+In the lapels of her lover's jacket.
+\end{verse}
+\end{figure*}
+    }
+    \renewcommand{\poemtwo}{
+        \begin{figure*}[p!]
+\bigskip
+\ding{72}
+\bigskip
+\settowidth{\versewidth}{I remember smoking hash by the railtracks}
+\begin{verse}[\versewidth]
+I remember smoking hash by the railtracks\\*
+\vin Dribbling down from Ponte Casilino\\
+With that giggly albino of a dutch girl\\*
+\vin Who never could stay pregnant.
+\end{verse}
+\end{figure*}
+    }
+    \renewcommand{\poemthree}{
+        \begin{figure*}[p!]
+\bigskip
+\ding{72}
+\bigskip
+\begin{verse}[0.96\textwidth]
+    The soul is nothing; death truly blots out all,\\*
+    \vin And the flame behind the eyes is doused forever.\\
+    But I have seen Silvia peering over my bedhead\\
+    \vin Though we'd buried her ashes by the side of the lay-by\\
+    Only that day -- as if she'd been fished out of the fire\\*
+    \vin And the river of forgetfulness had not yet worn away her lips.\\!
+
+    `How can you,' she said, `how can you sleep?\\*
+    \vin Have you forgetten those nights we had together:\\
+    The zip of my sundress, worn down from overuse,\\
+    \vin And the scent of rose oil mingled with cigarette smoke?\\
+    We often made love under the railbridge,\\
+    \vin Our bodies warming the bare earth.\\
+    So long to all those pleasures of sweet life\\*
+    \vin Which time and heartache blindly poured away.\\!
+
+    `But I'll say no more about that. Water under the bridge.\nobreak\\*
+    \vin You paid me your respects in what you wr\'ote.\\
+    If you still want to make it right: bury your notebooks next to my grave,\\
+    \vin Plant myrtle over us both, and carve in the limestone --\\
+    Where Anio's purling fattens thirsty plum groves,\\
+    \vin And ivory, thanks to Hercules, never yellows --\\
+    \textit{Here lies gold and Silvia, bringing}\\*
+    \vin \textit{Glory, Father \textsc{Anio}, to your banks.}\\!
+
+    `And pay attention to the pleas of an old lover;\\*
+    \vin If word gets back from the dead, it must be worth knowing.\\
+    Daylight keeps us in chains; night sets us free,\\
+    \vin And Cerberus only watches the backs of his six eyelids.\nobreak\\
+    Others can have you for now;\\
+    \vin You'll be ashes yourself soon enough.\\
+    You'll be with me, and the good earth\\*
+    \vin Will mill each of our bones into the other's.'\\!
+
+    Thus she spoke, and laid herself beside me,\\*
+    \vin But when the morning came her warmth was gone.
+\end{verse}
+\end{figure*}
+    }
+    \initprintpoems
+
+    \noindent Juan was very good with women. If you have never been -- as I was when I knew him -- a sixteen year old male, free of my parents for the first time, in the intense heat of a Roman summer, you might not appreciate how close to godhood a talent with women can make a man in the eyes of his companions. But, for a young man, being good with women is not like being good with cars or horses or differential equations; those are all a means to an end, but the enjoyment of women is the summit of human existence.
+
+Juan enjoyed plenty of women, but it would be dishonest of me if I gave you the impression that he was ever callous or possessive towards his lovers. I never saw him look at a woman as if she was his Juliet, or as if she was just another entry in a ledger of conquests. Perhaps that was his secret.
+
+Juan was good with women, but you will have surmised that he stirred up a different kind of admiration in my own heart too. Just like in Solomon's dream -- where God poured out all his other blessings because the king had the sense to ask for the one thing that was truly valuable -- Juan's talent with women seemed to be complemented by every other conceivable advantage. He was young, and I hardly need to tell you he was handsome -- but not so handsome as to obscure his generous good nature. He had a sharp mind and came from a wealthy family; when I knew him, he was taking some sort of extended holiday from an advanced degree. He was Costa Rican, but without that inflated national pride which citizens of younger countries sometimes carry within themselves; I remember one evening when we were smoking hash on a balcony, a mutual friend peeled off a ``Product of Costa Rica'' sticker from a mango and stuck it on his teeshirt, and he laughed heartily. And he also happened to possess a straightforwardly reassuring religious faith; indeed, we used to take the sacrament together at Santa Maria Maggiore, and watch the blossoms fluttering down in memory of the miraculous August snow.
+
+\prosesep
+
+One evening -- I remember it was a Friday -- we went for a night out in Ostia, and it happened like this. There's a train line from Basilica San Paolo to the centre of Ostia, and we bought two litres of vodka and a large carton of orange juice from a shop near the station. We took the last train out; I think in those days it left around eleven. The journey takes half an hour, and, because we had no third vessel in which to mix the juice and the alcohol, I would take a swig from the carton and Juan from the bottle, after which he would decant a glug or so from his vessel into mine. And I was astonished by the nonchalance with which he drank, as if he was imbibing nothing more caustic than lukewarm camomile tea.
+
+In Ostia, there was a nightclub on the beach, but we rejoined Juan's friends about a hundred yards further down the shoreline, where they had built a small fire. There was a short, muscular Brazilian man, who wanted to be a boxer. There was a young Mexican, whose father had recently bought him a tiny bar in Rome proper (called La Radio) and his Italian girlfriend, who, over the course of the evening, made a number of rather funny comparisons between her boyfriend and Speedy Gonzales, which he took with very good grace. And there were also three or four young Italian men, whose names and faces I have forgotten.
+
+Juan was friendly with the bouncers at the nightclub, so that we could come and go between the club and the campfire as we pleased. By one o'clock, Juan and myself were bored of vodka orange, and so headed for the bar for a proper drink. It was busy, and there were only a couple of bartenders; we were clearly in for a wait. But that was no matter; it gave us a chance to mingle with the girls. I got talking to a young Italian lady; her name was Vittoria. She was older than me, but only by a few months. And she was lovely to look at. She had the features one might expect from an Italian; skin half a shade darker than my own, deep brown eyes, wavy black hair. She also had exceptionally rosy cheeks which glowed a little when she smiled, even though -- except perhaps for a touch of mascara -- she was not wearing any makeup. Juan, of course, was doing his thing; I saw him talking to a girl at the other end of the enclosure. To the best of my recollection, she looked about fifteen, with light brown hair and watery blue eyes. But she stood out because of the refinement of her clothing; she wore a pearl grey cocktail dress -- a bit short, but very elegant -- paired with diamond ear studs and a pair of black stilettos. When I finally got to the bar, I asked for a \textit{gin tonica} and a vodka lime for Vittoria. I gestured to Juan asking if he would like me to get him anything, but he gestured back that he was fine.
+
+As we walked back down the beach, I noticed some girls darting in and out of the waves, playing in the water like otters.
+
+`\textit{Sono...?}' I asked my companion. \hspace{0.5in} {\footnotesize Are they...?}
+
+`\textit{Completamente,}' she replied. \hspace{0.5in} {\footnotesize Completely.}
+
+And I cursed my shortsightedness. All I could see were pink outlines in the throbbing blackness.
+
+Vittoria had come with her brother, but she did not mind being separated from him for a bit; neither twin was overprotective like that. So we settled back down by the campfire, and spent the next few hours drinking and talking. I tried my hardest to absorb her \textit{italianit\`a}, and she put up with my weak grasp of her language most commendably.
+
+Juan reappeared an hour before dawn, carrying a girl on his back as if he was giving her a piggyback. As he approached the fire, he laid her down for a moment on the sand. It was one of the American girls who was living in the house with us. (Her name was Heidi.) She looked nine tenths unconscious. I began to get up.
+
+`No,' Juan said. `She's okay. I found her in the club, slumped over one of the tables. She just had a bit too much. She'll be all right.'
+
+We took the first train from Ostia back to Basilica San Paolo, which left at about five o'clock. Vittoria was sat next to me; I finally worked up the courage to put my arm round her shoulders; and we cuddled chastely in the pre-dawn twilight for the half hour journey back into the city. We parted ways forever outside the station, and Juan and myself looked for a bus to take Heidi's mortal remains back to our house near the Ponte Casilino.
+
+The bus was practically empty, so we took the back row. We propped Heidi against the window, and she soon passed out with her face against the glass. Naturally, Juan and myself began to talk. What was he doing while I was talking to Vittoria by the fire? Where had he been?
+
+`I was with a girl.'
+
+`The one I saw you with by the bar?'
+
+`Yes.'
+
+`And you...?'
+
+`Yes.'
+
+`Where?'
+
+`We walked a bit further down the coast. I think perhaps for half a mile? There was a hotel. It was deserted. And there were plenty of loungers.'
+
+`That's incredible.'
+
+`That's not even the best part.' He smiled to himself. `I think she was a virgin. She was nervous and --' he pulled down his jeans to show me his underwear; on the grey cotton, there was a trail of black splodges near the crotch -- `she bled on me a bit. Anyway, she won't forget me.'
+
+Just as he finished speaking, the bus turned and passed under the Porta Onoriana, a trio of rose-gold coloured arches, a stone's throw from the main part of the Porta Maggiore, the remains of a fortification put up in the last years of the Western Roman Empire. It was a cloudless day, and, because it was so early, the sun was still low enough to shine directly through the archways, pouring its marvellous burgundy light down the whole length of the Via Casilina. Juan and I and glanced at each other. Perhaps there was even a chuckle or a sharp intake of breath. But no words were necessary to acknowledge the moment. We passed the rest of the journey in a comfortable silence.
+
+Heidi perked up once we were home. Juan made cheese and prosciutto omelettes for the three of us. He was, of course, an excellent cook. Then I went to my room and slept until well into the afternoon.
+
+\prosesep
+
+Years later, my beloved, in a stonebuilt house in England, a few minutes after I had relieved you of your own virginity, I asked you if I could get you anything, and you asked for hot chocolate. I went down to the kitchen, put the kettle on, and looked through the window at the night's sky. It was just after three o'clock in the morning of the twenty-fifth of December; but, for all the distance in time, climate and latitude, I could not help but think back to that morning on the Via Casilina.
+
+    \bigskip
+    \bigskip
+    \begin{center}
+        \textsc{End of the First Book}
+    \end{center}
+
+\end{document}
